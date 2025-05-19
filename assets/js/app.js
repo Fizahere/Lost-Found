@@ -1,8 +1,3 @@
-//mob menu
-function toggleMenu() {
-    document.getElementById("mobileMenu").classList.toggle("hidden");
-}
-
 //form
 // Initialization for ES Users
 import {
@@ -12,3 +7,13 @@ import {
 } from "tw-elements";
 
 initTWE({ Input, Ripple });
+
+
+//notfound
+ const knownPages = ['index.html', 'about.html', 'contact.html'];
+  const currentPage = location.pathname.split('/').pop();
+
+  if (currentPage && !knownPages.includes(currentPage)) {
+    window.location.href = '404.html';
+  }
+
