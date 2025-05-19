@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Parkinsans:wght@300..800&display=swap');
+
+body {
+    font-family: 'Parkinsans', sans-serif;
+}
+
+h1 {
+  font-family: 'Oswald', sans-serif;
+}
+.card {
+  width: 120px;
+  height: 150px;
+  background: rgba(211, 211, 211, 0.199);
+  position: absolute;
+  transition: .3s ease-in-out;
+  cursor: pointer;
+  box-shadow: 0px 0px 30px -10px rgba(0, 0, 0, 0.3);
+}
+
+#c1 { background-color: rgb(209, 137, 209); }
+#c2 { background-color: rgb(150, 150, 224); }
+#c3 { background-color: rgb(139, 201, 98); }
+#c4 { background-color: rgb(212, 93, 163); }
+
+.main:hover #c1 { transform: translateX(-100px) rotate(-40deg); }
+.main:hover #c2 { transform: translateX(-50px) rotate(-30deg); }
+.main:hover #c3 { transform: translateX(0) rotate(-20deg); }
+.main:hover #c4 { transform: translateX(50px) rotate(-10deg); }
+
+#c1:hover { transform: translateX(-150px) rotate(0deg) !important; }
+#c2:hover { transform: translateX(-100px) rotate(0deg) !important; }
+#c3:hover { transform: translateX(-50px) rotate(0deg) !important; }
+#c4:hover { transform: translateX(50px) rotate(0deg) !important; }
+
+.main {
+  display: grid;
+  position: relative;
+  /* width: 240px;
+  height: 160px; */
+  /* overflow: hidden; */
+}
