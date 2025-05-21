@@ -1,47 +1,71 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Parkinsans:wght@300..800&display=swap');
 
+:root {
+  --color-primary: #9696e0;     
+  --color-primary-dark: #262626; 
+  --color-pink: #d189d1; 
+  --color-green: #99ff33;      
+  --color-gray-light: #cccccc;      
+}
+
 body {
-    font-family: 'Parkinsans', sans-serif;
+  font-family: 'Parkinsans', sans-serif;
 }
 
 h1 {
   font-family: 'Oswald', sans-serif;
 }
-.card {
-  width: 120px;
-  height: 150px;
-  background: rgba(211, 211, 211, 0.199);
-  position: absolute;
-  transition: .3s ease-in-out;
-  cursor: pointer;
-  box-shadow: 0px 0px 30px -10px rgba(0, 0, 0, 0.3);
+
+/* carousel */
+.mini-slider-pagination-bullet-active {
+  background-color: white;
+  width: 1.5rem;
 }
 
-#c1 { background-color: #d189d1; }
-#c2 { background-color: #9696e0; }
-#c3 { background-color: #8bc962; }
-#c4 { background-color: #d45da3; }
+.slider-pagination-bullet {
+  transition: all 0.3s ease;
+}
 
-.main:hover #c1 { transform: translateX(-100px) rotate(-40deg); }
-.main:hover #c2 { transform: translateX(-50px) rotate(-30deg); }
-.main:hover #c3 { transform: translateX(0) rotate(-20deg); }
-.main:hover #c4 { transform: translateX(50px) rotate(-10deg); }
+.slider-pagination-bullet-active {
+  width: 24px;
+  background-color: white;
+}
 
-#c1:hover { transform: translateX(-150px) rotate(0deg) !important; }
-#c2:hover { transform: translateX(-100px) rotate(0deg) !important; }
-#c3:hover { transform: translateX(-50px) rotate(0deg) !important; }
-#c4:hover { transform: translateX(50px) rotate(0deg) !important; }
+.slide {
+  transition: opacity 0.5s ease;
+}
 
-.main {
-  display: grid;
+.slide-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* carusel end */
+
+/* navbar */
+.nav-item {
   position: relative;
+  padding-bottom: 5px; 
+  color: black;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-/* #container {
+.nav-item::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-color: var(--color-primary); 
+  transition: width 0.3s ease;
+}
+
+.nav-item:hover::after {
   width: 100%;
-  height: 100%;
-  background-color: #313131;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.171) 2px, transparent 0);
-  background-size: 30px 30px;
-  background-position: -5px -5px
-} */
+}
+
+.nav-item.active::after {
+  width: 100%;
+}
